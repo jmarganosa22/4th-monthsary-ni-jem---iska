@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For My Cheesecake</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffd3e0,#ffe8f0);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+width:90%;
+max-width:350px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+color:white;
+}
+
+h1{
+margin-bottom:15px;
+text-shadow:0 0 10px white;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+#yes{
+background:#ff4d6d;
+color:white;
+}
+
+#no{
+background:white;
+color:#ff4d6d;
+position:absolute;
+}
+
+#result{
+display:none;
+animation:fade .7s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+
+audio{
+margin-top:20px;
+width:100%;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:fall 5s linear forwards;
+}
+
+@keyframes fall{
+from{transform:translateY(-100px);}
+to{transform:translateY(100vh);opacity:0;}
+}
+</style>
+
+</head>
+
+<body>
+  
+<div class="card">
+
+<div id="question">
+
+<h1>Do you love me?
+  <br>💗🦖</h1>
+
+<p>You only have one correct answer🥺</p>
+
+<br>
+
+<button id="yes">YES😻</button>
+<button id="no">NO😿</button>
+
+</div>
+
+<div id="result">
+  
+  <div style="background:pink; padding:20px; border-radius:20px; text-align:center;">
+    <img src="budu.jpg" width="120" style="border-radius:15px;">
+  
+<h1>I KNEW IT, CRUSH MOKO!! Anyway...</h1>
+
+<h6>
+Happy 4th monthsary po!! Grabi, 4 months na pala tau magkasama kahit na malayo tau sa isa't isa.
+Ang bilis ng panahon, pero bawat araw na lumilipas, mas lalo kitang minamahal.
+Thankchuu for staying with me through everything.
+Kahit may mga tampuhan, misunderstandings, at mga araw na hindi madali, pinipili pa rin natin ang isa't isa, and I'm so grateful for that.
+I just want you to know that meeting you is one of the best things that ever happened to me.
+Hindi lng kita basta girlfriend, you're my best friend, my safe place, my family <mark>(insert timie)</mark> and the person I want to create countless memories with.
+Hindi lng kita mahal dahil napapasaya mo ako.
+I love you because you make me want to become a better person.
+You inspire me to be more understanding, and more patient.
+In every day na nakakausap kita, you give me another reason to believe that love is worth choosing.
+Thankchuu for existing. Thankchuuu for loving me. And thankchuuusooomuchhh for making my heart feel at home.
+Mahal na mahal kita, babi. Hindi lng ngaun, hindi lng bukas, kundi sa bawat araw na darating. Happy 4th monthsary, my love:) 
+</h6>
+
+<audio controls loop>
+<source src="Libu-Libong Buwan (Uuwian) - Kyle Raphael.mp3" type="audio/mpeg">
+</audio>
+
+    <p align="center" style="font-family:cursive; font-size:20px; color:#ff4d6d;">
+     For:<br> Francheska Nicole R. Argañosa
+</p>
+    
+</div>
+
+</div>
+
+<script>
+const no=document.getElementById("no");
+
+function move(){
+no.style.left=Math.random()*(window.innerWidth-120)+"px";
+no.style.top=Math.random()*(window.innerHeight-60)+"px";
+}
+
+no.onmouseover=move;
+no.onclick=move;
+
+document.getElementById("yes").onclick=()=>{
+
+question.style.display="none";
+result.style.display="block";
+
+const music=document.querySelector("audio");
+music.play();
+
+setInterval(()=>{
+
+const h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💗";
+h.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),5000);
+
+},250);
+
+};
+</script>
+
+</body>
+</html>
